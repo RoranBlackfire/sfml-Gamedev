@@ -1,1 +1,1 @@
-add_library(headers INTERFACE)
+add_library(headers LuaScript.cpp)
