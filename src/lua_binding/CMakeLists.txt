@@ -1,0 +1,1 @@
+add_library(lua_binding LuaScript.cpp)
