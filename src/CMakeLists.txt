@@ -9,7 +9,7 @@ if(CPP_STARTER_USE_IMGUI)
 endif()
 
 add_executable(game main.cpp)
-add_subdirectory(headers)
+add_subdirectory(lua_binding)
 
 INCLUDE(FindPkgConfig)
 
@@ -18,7 +18,7 @@ include_directories(${LUA_INCLUDE_DIRS})
 
 target_link_libraries(
   game PRIVATE project_options project_warnings CONAN_PKG::docopt.cpp
-                CONAN_PKG::fmt CONAN_PKG::spdlog CONAN_PKG::imgui-sfml headers ${LUA_LIBRARIES})
+                CONAN_PKG::fmt CONAN_PKG::spdlog CONAN_PKG::imgui-sfml lua_binding ${LUA_LIBRARIES})
 
-target_include_directories(game PRIVATE  "${PROJECT_SOURCE_DIR}" "${PROJECT_SOURCE_DIR}/src/headers")
+target_include_directories(game PRIVATE  "${PROJECT_SOURCE_DIR}" "${PROJECT_SOURCE_DIR}/src/lua_binding")
 
